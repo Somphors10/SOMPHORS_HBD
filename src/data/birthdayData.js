@@ -12,7 +12,7 @@ const birthdayData = {
   koreanDate: "오늘은 나를 위한 날이에요 ♡",
   koreanFooter: "오늘도 행복한 하루 보내세요 ♡",
 
-  letterTitle: "A Little Letter to Myself 💌",
+  letterTitle: "A Little Letter to Myself",
   letterGreeting: "Dear Me ♡",
   letterBody: [
     "Happy Birthday to me. 🎂💜",
@@ -29,72 +29,78 @@ const birthdayData = {
     "I deserve beautiful things.",
     "And I deserve to enjoy this little moment.",
   ],
-  letterSignOff: "13.10 — My special day. 🪻✨",
+  letterSignOff: "13.10 — My special day ♡",
 
+  // `position` controls which part of the photo stays visible in the frame.
   photos: [
     {
       image: "/images/photo2.png",
       caption: "A moment when I smiled",
+      position: "center 30%",
     },
     {
       image: "/images/photo3.png",
-      caption: "Growing, learning, becoming 🪻",
+      caption: "Growing, learning, becoming",
+      position: "center 40%",
     },
     {
-      image: "/images/photo4.png",
+      image: "/images/photo4-cropped.jpg",
       caption: "One memory I want to keep",
+      position: "62% center",
     },
     {
       image: "/images/photo5.png",
       caption: "A night I felt like myself ♡",
+      position: "center 35%",
     },
   ],
 
   cafeItems: [
     {
-      emoji: "🍰",
       korean: "오늘의 케이크",
       category: "Lavender Cake",
       name: "Vanilla Lavender Cream Cake",
       quote: "A sweet little cake for my special day ♡",
+      note: "priceless",
       image: "/images/menu-cake.jpg",
     },
     {
-      emoji: "☕",
       korean: "오늘의 음료",
       category: "Today's Drink",
       name: "Lavender Latte",
       quote: "A little calmness for a new chapter.",
+      note: "on the house",
       image: "/images/menu-latte.jpg",
     },
     {
-      emoji: "🫐",
       korean: "스페셜 디저트",
       category: "Special Dessert",
       name: "Blueberry Cloud",
       quote: "Soft, sweet, and made with happiness.",
+      note: "made with love",
       image: "/images/menu-dessert.jpg",
     },
   ],
 
+  // icon: sprout | laptop | mountain | sparkles
   proudOf: [
     {
-      emoji: "🌱",
+      icon: "sprout",
       title: "Growth",
       text: "I kept growing, even when things were difficult.",
     },
     {
-      emoji: "💻",
+      icon: "laptop",
       title: "Dreams",
       text: "I'm still working toward the future I want.",
     },
     {
-      emoji: "🪻",
+      icon: "mountain",
       title: "Strength",
       text: "I made it through moments I once thought I couldn't.",
     },
     {
-      emoji: "✨",
+      icon: "sparkles",
       title: "Myself",
       text: "I'm becoming someone I'm proud to be.",
     },

@@ -68,14 +68,28 @@ export default function MusicPlayer() {
   }
 
   return (
-    <div className={`music-player ${playing ? "is-playing" : ""}`}>
-      <div className="vinyl" aria-hidden="true" />
+    <div className={`music ${playing ? "is-playing" : ""}`}>
+      <span className="disc" aria-hidden="true" />
+      <span className="music-meta">
+        <small>{playing ? "now playing" : "birthday song"}</small>
+        <span>happy birthday, me</span>
+      </span>
+      <span className="eq" aria-hidden="true">
+        <i />
+        <i />
+        <i />
+        <i />
+      </span>
       <button
+        className="music-btn"
         onClick={toggle}
         aria-label={playing ? "Pause birthday music" : "Play birthday music"}
       >
-        <span className="music-mark">♡ ♪</span>
-        {playing ? <Pause size={16} /> : <Play size={16} />}
+        {playing ? (
+          <Pause size={15} fill="currentColor" strokeWidth={0} />
+        ) : (
+          <Play size={15} fill="currentColor" strokeWidth={0} />
+        )}
       </button>
     </div>
   );

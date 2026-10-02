@@ -1,27 +1,53 @@
+import { Heart, Laptop, Mountain, Sparkles, Sprout } from "lucide-react";
 import birthdayData from "../data/birthdayData.js";
-import { useInView } from "../utils/useInView.js";
+import Reveal from "./Reveal.jsx";
+
+const ICONS = {
+  sprout: Sprout,
+  laptop: Laptop,
+  mountain: Mountain,
+  sparkles: Sparkles,
+};
 
 export default function ProudOfMyself() {
-  const [ref, visible] = useInView(0.15);
-
   return (
-    <section id="growth" className="section growth-section">
-      <div className="section-heading">
-        <h2>Things I'm Proud Of ♡</h2>
-      </div>
+    <section id="growth" className="section proud-section">
+      <div className="proud-layout">
+        <Reveal className="proud-intro">
+          <p className="eyebrow">this year</p>
+          <h2>
+            Things I'm <em>Proud</em> Of
+          </h2>
+          <p>Little victories that deserve to be remembered.</p>
+          <span className="proud-script" aria-hidden="true">
+            well done, me
+          </span>
+        </Reveal>
 
-      <div ref={ref} className={`proud-grid ${visible ? "is-visible" : ""}`}>
-        {birthdayData.proudOf.map((item, index) => (
-          <article
-            key={item.title}
-            className="proud-card"
-            style={{ animationDelay: `${index * 0.12}s` }}
-          >
-            <span className="proud-emoji">{item.emoji}</span>
-            <h3>{item.title}</h3>
-            <p>“{item.text}”</p>
-          </article>
-        ))}
+        <ol className="proud-list">
+          {birthdayData.proudOf.map((item, index) => {
+            const Icon = ICONS[item.icon] ?? Heart;
+            return (
+              <Reveal
+                as="li"
+                key={item.title}
+                className="proud-item"
+                delay={index * 120}
+              >
+                <span className="proud-num">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <span className="proud-icon" aria-hidden="true">
+                  <Icon size={24} strokeWidth={1.5} />
+                </span>
+                <div>
+                  <h3>{item.title}</h3>
+                  <p>“{item.text}”</p>
+                </div>
+              </Reveal>
+            );
+          })}
+        </ol>
       </div>
     </section>
   );

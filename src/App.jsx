@@ -1,4 +1,6 @@
+import Nav from "./components/Nav.jsx";
 import Hero from "./components/Hero.jsx";
+import Ribbons from "./components/Ribbons.jsx";
 import BirthdayLetter from "./components/BirthdayLetter.jsx";
 import PhotoGallery from "./components/PhotoGallery.jsx";
 import CafeMenu from "./components/CafeMenu.jsx";
@@ -14,15 +16,18 @@ import FloatingDecorations from "./components/FloatingDecorations.jsx";
 export default function App() {
   return (
     <div className="page">
+      <Nav />
       <FloatingDecorations />
       <main>
         <Hero />
+        <Ribbons />
         <BirthdayLetter />
         <PhotoGallery />
         <CafeMenu />
         <ProudOfMyself />
-        <BirthdayCake />
         <SecretGift />
+        {/* Night (wish) flows into dawn (new chapter). */}
+        <BirthdayCake />
         <NewChapter />
         <BirthdayDate />
       </main>

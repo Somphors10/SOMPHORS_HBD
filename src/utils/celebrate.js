@@ -1,5 +1,5 @@
-const CONFETTI_COLORS = ["#E8DDF5", "#D8C4EE", "#C9B1E5", "#FFFCFF", "#A98BC7", "#F5F1F8"];
-const HEARTS = ["♡", "💜", "🪻", "✦", "✨", "☁️", "🎀"];
+const CONFETTI_COLORS = ["#DDCCEF", "#C8AFE4", "#AA8BCF", "#FFFFFF", "#E6C98A", "#F1CFDC", "#8B69B3"];
+const HEARTS = ["♡", "💜", "✦", "✨", "♥", "🤍", "✧"];
 
 function getLayer() {
   let layer = document.getElementById("celebrate-layer");
