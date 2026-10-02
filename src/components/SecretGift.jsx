@@ -91,7 +91,7 @@ export default function SecretGift() {
     timers.current = [
       window.setTimeout(() => setStage("open"), 800),
       window.setTimeout(() => {
-        celebrate({ confetti: 60, hearts: 24 });
+        celebrate({ confetti: 40, hearts: 14 });
         setStage("revealed");
       }, 1700),
     ];

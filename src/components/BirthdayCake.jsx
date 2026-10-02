@@ -189,7 +189,7 @@ export default function BirthdayCake() {
     timers.current = [
       window.setTimeout(() => setStage("blown"), 900),
       window.setTimeout(() => {
-        celebrate({ confetti: 90, hearts: 24 });
+        celebrate({ confetti: 55, hearts: 14 });
         setStage("wished");
       }, 2000),
     ];

@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { Heart, Mail } from "lucide-react";
 import birthdayData from "../data/birthdayData.js";
 import { celebrate } from "../utils/celebrate.js";
@@ -5,11 +6,33 @@ import Sparkle from "./Sparkle.jsx";
 
 export default function Hero() {
   const themes = birthdayData.theme.split("•").map((item) => item.trim());
+  const artRef = useRef(null);
 
   function openLetter() {
-    celebrate({ confetti: 80, hearts: 22 });
+    celebrate({ confetti: 48, hearts: 12 });
     window.dispatchEvent(new Event("open-letter"));
     document.getElementById("letter")?.scrollIntoView({ behavior: "smooth" });
+  }
+
+  function onMove(event) {
+    const art = artRef.current;
+    if (!art) return;
+    const rect = art.getBoundingClientRect();
+    const x = (event.clientX - rect.left) / rect.width - 0.5;
+    const y = (event.clientY - rect.top) / rect.height - 0.5;
+    art.style.setProperty("--mx", `${x * 14}px`);
+    art.style.setProperty("--my", `${y * 10}px`);
+    art.style.setProperty("--rx", `${y * -4}deg`);
+    art.style.setProperty("--ry", `${x * 5}deg`);
+  }
+
+  function onLeave() {
+    const art = artRef.current;
+    if (!art) return;
+    art.style.setProperty("--mx", "0px");
+    art.style.setProperty("--my", "0px");
+    art.style.setProperty("--rx", "0deg");
+    art.style.setProperty("--ry", "0deg");
   }
 
   return (
@@ -47,7 +70,12 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="hero-art">
+        <div
+          className="hero-art"
+          ref={artRef}
+          onMouseMove={onMove}
+          onMouseLeave={onLeave}
+        >
           <span className="arch-outline" aria-hidden="true" />
           <div className="arch">
             <img
@@ -88,12 +116,11 @@ export default function Hero() {
                 </textPath>
               </text>
             </svg>
-            <Heart size={26} fill="currentColor" strokeWidth={0} />
+            <Heart size={22} fill="currentColor" strokeWidth={0} />
           </div>
 
           <Sparkle className="spark spark-1" />
           <Sparkle className="spark spark-2" />
-          <Sparkle className="spark spark-3" />
         </div>
       </div>
 

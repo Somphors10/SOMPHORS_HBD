@@ -1,14 +1,11 @@
 import Sparkle from "./Sparkle.jsx";
 
+/* Just a few quiet accents — enough atmosphere, not a crowd. */
 const DECORATIONS = [
-  { type: "sparkle", x: "5%", y: "20%", size: 14, delay: 0 },
-  { type: "heart", x: "93%", y: "14%", size: 14, delay: 1.2 },
-  { type: "sparkle", x: "88%", y: "46%", size: 10, delay: 2 },
-  { type: "dot", x: "4%", y: "58%", size: 6, delay: 0.6 },
-  { type: "sparkle", x: "95%", y: "74%", size: 16, delay: 1.8 },
-  { type: "heart", x: "7%", y: "86%", size: 12, delay: 2.4 },
-  { type: "dot", x: "91%", y: "92%", size: 5, delay: 1.5 },
-  { type: "sparkle", x: "2.5%", y: "38%", size: 9, delay: 3.1 },
+  { type: "sparkle", x: "6%", y: "22%", size: 12, delay: 0 },
+  { type: "heart", x: "94%", y: "18%", size: 12, delay: 1.4 },
+  { type: "sparkle", x: "92%", y: "72%", size: 10, delay: 2.2 },
+  { type: "dot", x: "5%", y: "78%", size: 5, delay: 0.8 },
 ];
 
 function Heart({ size }) {

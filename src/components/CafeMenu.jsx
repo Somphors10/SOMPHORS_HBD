@@ -1,8 +1,18 @@
+import { useState } from "react";
 import birthdayData from "../data/birthdayData.js";
 import Reveal from "./Reveal.jsx";
 import Sparkle from "./Sparkle.jsx";
 
 export default function CafeMenu() {
+  const [ordered, setOrdered] = useState(null);
+
+  function order(item) {
+    setOrdered(item.name);
+    window.setTimeout(() => {
+      setOrdered((current) => (current === item.name ? null : current));
+    }, 2400);
+  }
+
   return (
     <section id="cafe" className="section cafe-section">
       <Reveal className="menu-sheet">
@@ -20,7 +30,7 @@ export default function CafeMenu() {
             <Reveal
               as="article"
               key={item.name}
-              className="menu-item"
+              className={`menu-item ${ordered === item.name ? "is-ordered" : ""}`}
               delay={index * 140}
             >
               <div className="menu-arch">
@@ -36,12 +46,26 @@ export default function CafeMenu() {
               <p className="menu-price">
                 <span>{item.note} ♡</span>
               </p>
+              <button
+                className="menu-order"
+                onClick={() => order(item)}
+                type="button"
+              >
+                {ordered === item.name ? "coming right up ♡" : "order for me"}
+              </button>
             </Reveal>
           ))}
         </div>
 
         <p className="menu-foot">A little café made just for me ♡</p>
       </Reveal>
+
+      {ordered && (
+        <div className="cafe-toast" role="status">
+          <span>✦</span>
+          One {ordered}, please — for the birthday girl.
+        </div>
+      )}
     </section>
   );
 }

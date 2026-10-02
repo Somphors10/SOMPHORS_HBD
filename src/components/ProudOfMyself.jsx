@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Heart, Laptop, Mountain, Sparkles, Sprout } from "lucide-react";
 import birthdayData from "../data/birthdayData.js";
 import Reveal from "./Reveal.jsx";
@@ -10,6 +11,17 @@ const ICONS = {
 };
 
 export default function ProudOfMyself() {
+  const [stamped, setStamped] = useState(() => new Set());
+
+  function toggleStamp(title) {
+    setStamped((prev) => {
+      const next = new Set(prev);
+      if (next.has(title)) next.delete(title);
+      else next.add(title);
+      return next;
+    });
+  }
+
   return (
     <section id="growth" className="section proud-section">
       <div className="proud-layout">
@@ -19,6 +31,7 @@ export default function ProudOfMyself() {
             Things I'm <em>Proud</em> Of
           </h2>
           <p>Little victories that deserve to be remembered.</p>
+          <p className="proud-hint">tap a card to stamp it ♡</p>
           <span className="proud-script" aria-hidden="true">
             well done, me
           </span>
@@ -27,12 +40,23 @@ export default function ProudOfMyself() {
         <ol className="proud-list">
           {birthdayData.proudOf.map((item, index) => {
             const Icon = ICONS[item.icon] ?? Heart;
+            const isStamped = stamped.has(item.title);
             return (
               <Reveal
                 as="li"
                 key={item.title}
-                className="proud-item"
+                className={`proud-item ${isStamped ? "is-stamped" : ""}`}
                 delay={index * 120}
+                onClick={() => toggleStamp(item.title)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(event) => {
+                  if (event.key === "Enter" || event.key === " ") {
+                    event.preventDefault();
+                    toggleStamp(item.title);
+                  }
+                }}
+                aria-pressed={isStamped}
               >
                 <span className="proud-num">
                   {String(index + 1).padStart(2, "0")}

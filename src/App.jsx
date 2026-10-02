@@ -1,9 +1,9 @@
-import Nav from "./components/Nav.jsx";
 import Hero from "./components/Hero.jsx";
 import Ribbons from "./components/Ribbons.jsx";
 import BirthdayLetter from "./components/BirthdayLetter.jsx";
 import PhotoGallery from "./components/PhotoGallery.jsx";
 import CafeMenu from "./components/CafeMenu.jsx";
+import Fortune from "./components/Fortune.jsx";
 import ProudOfMyself from "./components/ProudOfMyself.jsx";
 import BirthdayCake from "./components/BirthdayCake.jsx";
 import SecretGift from "./components/SecretGift.jsx";
@@ -16,7 +16,6 @@ import FloatingDecorations from "./components/FloatingDecorations.jsx";
 export default function App() {
   return (
     <div className="page">
-      <Nav />
       <FloatingDecorations />
       <main>
         <Hero />
@@ -24,6 +23,7 @@ export default function App() {
         <BirthdayLetter />
         <PhotoGallery />
         <CafeMenu />
+        <Fortune />
         <ProudOfMyself />
         <SecretGift />
         {/* Night (wish) flows into dawn (new chapter). */}

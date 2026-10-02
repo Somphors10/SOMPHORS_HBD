@@ -112,8 +112,40 @@ const birthdayData = {
 
   chapterGoals: ["Learn", "Grow", "Dream", "Enjoy"],
 
-  // Replace public/music/birthday.mp3 with your own song anytime.
-  musicSrc: "/music/birthday.mp3",
+  fortunes: [
+    "Something soft and good is already on its way to you. ♡",
+    "You don't have to rush — this year will meet you where you are.",
+    "A quiet confidence is blooming inside you.",
+    "Keep the dream. It's closer than it looks. ✨",
+    "Today is allowed to be gentle and beautiful.",
+    "You are becoming someone you'll be proud of.",
+    "A little sweetness finds you when you least expect it.",
+    "New memories are waiting — and you'll enjoy them.",
+  ],
+
+  // Birthday K-pop playlist (official YouTube MVs)
+  playlist: [
+    {
+      title: "Make a Wish",
+      artist: "NCT U",
+      id: "tyrVtwE8Gv0",
+    },
+    {
+      title: "Birthday",
+      artist: "Red Velvet",
+      id: "Ut1OzEVUiM4",
+    },
+    {
+      title: "BIRTHDAY",
+      artist: "JEON SOMI",
+      id: "oDJ4ct59NC4",
+    },
+    {
+      title: "Make a Wish (Wuki Remix)",
+      artist: "NCT U",
+      id: "Z15lDHVdbP8",
+    },
+  ],
 };
 
 export default birthdayData;
