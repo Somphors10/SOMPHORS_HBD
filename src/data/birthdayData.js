@@ -141,6 +141,16 @@ const birthdayData = {
       id: "oDJ4ct59NC4",
     },
     {
+      title: "HAPPY BIRTHDAY",
+      artist: "SEVENTEEN",
+      id: "Ar5-Yitahp8",
+    },
+    {
+      title: "PARTY",
+      artist: "Girls' Generation",
+      id: "HQzu7NYlZNQ",
+    },
+    {
       title: "Make a Wish (Wuki Remix)",
       artist: "NCT U",
       id: "Z15lDHVdbP8",
